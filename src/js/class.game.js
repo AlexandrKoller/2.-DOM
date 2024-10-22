@@ -2,7 +2,13 @@ export default class Game {
     constructor(element) {
         this.element = element
     }
-
+    createGame() {
+        for (let index = 0; index < 16; index++) {
+            const div = document.createElement('div')
+            div.className = 'hole'
+            this.element.append(div);
+         }
+    }
     setGoblin(){
         const allHole = this.element.querySelectorAll('.hole')
         let randomIndex = Math.floor(1 + Math.random() * 16) - 1
